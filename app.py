@@ -174,17 +174,22 @@ def show_codes(r: int, g: int, b: int, a: float, Key_prefix: str = "codes1") -> 
     hex_with_a = rgba_to_hex(r, g, b, a, with_alpha=True)
     hex_no_a = rgba_to_hex(r, g, b, a, with_alpha=False)
 
-    cols = st.columns(2)
-    with cols[0]:
-        st.text_input("HEX (#RRGGBB)", hex_no_a, key=f"{Key_prefix}_hex_no_a")
-        st.text_input("HEX com Alpha (#RRGGBBAA)", hex_with_a, key=f"{Key_prefix}_hex_with_a")
-        st.text_input("RGB", format_rgb(r, g, b), key=f"{Key_prefix}_rgb", disabled=True)
-        st.text_input("RGBA", format_rgba(r, g, b, a), key=f"{Key_prefix}_rgba", disabled=True)
-    with cols[1]:
-        st.text_input("HSL", format_hsl(h_hsl, s_hsl, l_hsl), key=f"{Key_prefix}_hsl", disabled=True)
-        st.text_input("HSLA", format_hsl(h_hsl, s_hsl, l_hsl, a), key=f"{Key_prefix}_hsla", disabled=True)
-        st.text_input("HSV", format_hsv(h_hsv, s_hsv, v_hsv), key=f"{Key_prefix}_hsv", disabled=True)
-
+    col1, col2 = st.columns(2)
+    with col1:
+        st.caption("HEX (#RRGGBB)")
+        st.code(hex_no_a)
+        st.caption("HEX com Alpha (#RRGGBBAA)")
+        st.code(hex_with_a)
+        st.caption("RGB")
+        st.code(format_rgb(r, g, b))
+        st.caption("RGBA")
+        st.code(format_rgba(r, g, b, a))  # alpha com 1 casa
+    with col2:
+        st.caption("HSL")
+        st.code(format_hsl(h_hsl, s_hsl, l_hsl))
+        st.caption("HSLA")
+        st.code(format_hsl(h_hsl, s_hsl, l_hsl, a))  # alpha com 1 casa
+        st.caption("HSV")
 
 # ----------------------------
 # Páginas
@@ -357,4 +362,5 @@ with tabs[1]:
 with tabs[2]:
 
     page_wheel()
+
 
