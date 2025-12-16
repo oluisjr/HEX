@@ -17,7 +17,7 @@ import colorsys
 # Configuração básica da página
 # ----------------------------
 st.set_page_config(
-    page_title="RGBA Color Picker",
+    page_title="Projeto RGBA",
     page_icon="🎨",
     layout="centered",
 )
@@ -192,10 +192,6 @@ def show_codes(r: int, g: int, b: int, a: float, Key_prefix: str = "codes1") -> 
 def page_picker() -> None:
     """Página principal: Picker RGBA."""
     st.header("Picker (RGBA)")
-    st.caption(
-        "Usa o st.color_picker (retorna Hex) + slider de transparência (Alpha) "
-        "para compor o RGBA. Referência do widget: st.color_picker. "
-    )
     # O st.color_picker retorna uma string Hex (#RRGGBB)
     # Doc: https://docs.streamlit.io/develop/api-reference/widgets/st.color_picker
     # (Veja acima na análise)
@@ -359,4 +355,5 @@ with tabs[0]:
 with tabs[1]:
     page_converters()
 with tabs[2]:
+
     page_wheel()
