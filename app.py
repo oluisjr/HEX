@@ -176,8 +176,8 @@ def show_codes(r: int, g: int, b: int, a: float, Key_prefix: str = "codes1") -> 
 
     cols = st.columns(2)
     with cols[0]:
-        st.text_input("HEX (#RRGGBB)", hex_no_a, key=f"{Key_prefix}_hex_no_a", disabled=True)
-        st.text_input("HEX com Alpha (#RRGGBBAA)", hex_with_a, key=f"{Key_prefix}_hex_with_a", disabled=True)
+        st.text_input("HEX (#RRGGBB)", hex_no_a, key=f"{Key_prefix}_hex_no_a")
+        st.text_input("HEX com Alpha (#RRGGBBAA)", hex_with_a, key=f"{Key_prefix}_hex_with_a")
         st.text_input("RGB", format_rgb(r, g, b), key=f"{Key_prefix}_rgb", disabled=True)
         st.text_input("RGBA", format_rgba(r, g, b, a), key=f"{Key_prefix}_rgba", disabled=True)
     with cols[1]:
@@ -357,3 +357,4 @@ with tabs[1]:
 with tabs[2]:
 
     page_wheel()
+
