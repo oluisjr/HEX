@@ -178,18 +178,20 @@ def show_codes(r: int, g: int, b: int, a: float, Key_prefix: str = "codes1") -> 
     with col1:
         st.caption("HEX (#RRGGBB)")
         st.code(hex_no_a)
-        st.caption("HEX com Alpha (#RRGGBBAA)")
-        st.code(hex_with_a)
-        st.caption("RGB")
-        st.code(format_rgb(r, g, b))
-        st.caption("RGBA")
-        st.code(format_rgba(r, g, b, a))  # alpha com 1 casa
-    with col2:
         st.caption("HSL")
         st.code(format_hsl(h_hsl, s_hsl, l_hsl))
+        st.caption("RGB")
+        st.code(format_rgb(r, g, b))
+        st.caption("HSV")
+        st.code(format_hsv(h_hsv, s_hsv, v_hsv))
+
+    with col2:
+        st.caption("HEX com Alpha (#RRGGBBAA)")
+        st.code(hex_with_a)
         st.caption("HSLA")
         st.code(format_hsl(h_hsl, s_hsl, l_hsl, a))  # alpha com 1 casa
-        st.caption("HSV")
+        st.caption("RGBA")
+        st.code(format_rgba(r, g, b, a))
 
 # ----------------------------
 # Páginas
@@ -362,5 +364,6 @@ with tabs[1]:
 with tabs[2]:
 
     page_wheel()
+
 
 
