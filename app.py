@@ -316,7 +316,7 @@ def show_home():
 
     st.divider()
 
-    st.caption("Desenvolvido por Lulinha")
+st.sidebar.caption("Desenvolvido por Lulinha")
 
 # --- Helper de Visualização ---
 def card_header(title, desc):
@@ -705,4 +705,5 @@ elif st.session_state.section == "Ferramentas":
     elif st.session_state.page == "Roda": page_wheel()
     elif st.session_state.page == "Imagem": page_image()
     elif st.session_state.page == "Aleatorio": page_random()
+
 
