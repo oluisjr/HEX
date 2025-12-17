@@ -316,8 +316,6 @@ def show_home():
 
     st.divider()
 
-st.sidebar.caption("Desenvolvido por Lulinha")
-
 # --- Helper de Visualização ---
 def card_header(title, desc):
     st.markdown(f"""
@@ -691,6 +689,8 @@ with st.sidebar.expander("🟣 POWER APPS", expanded=True):
         st.session_state.section = "Ferramentas"
         st.session_state.page = "Aleatorio"
 
+st.sidebar.caption("Desenvolvido por Lulinha")
+
 # Roteamento
 if st.session_state.section == "Documentação":
     if st.session_state.page == "Início": show_home()
@@ -705,5 +705,6 @@ elif st.session_state.section == "Ferramentas":
     elif st.session_state.page == "Roda": page_wheel()
     elif st.session_state.page == "Imagem": page_image()
     elif st.session_state.page == "Aleatorio": page_random()
+
 
 
